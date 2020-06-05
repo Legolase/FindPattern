@@ -3,13 +3,7 @@
 using namespace std;
 
 int str(const char* text, const char* pattern) { // возвращает индекс символа text, с которого начинается совпадение с pattern
-    size_t tsize{}, psize{};
-    
-    for (size_t i = 0; text[i] != '\0'; ++i)
-        ++tsize;
-
-    for (size_t i = 0; pattern[i] != '\0'; ++i)
-        ++psize;
+    size_t tsize = strlen(text), psize = strlen(pattern);
     
     if (psize <= tsize) {
         int cur{}; //counter - содержит кол-во совпадённых символов с позиции индекса cur
@@ -27,6 +21,6 @@ int str(const char* text, const char* pattern) { // возвращает индекс символа te
 
 int main()
 {
-    char c[] = "120367265", f[] = "2036726";
+    char c[] = "120367265", f[] = "65";
     cout << str(c, f);
 }
